@@ -1,7 +1,7 @@
 Summary:	Performance analysis tool
 Name:		nmon
 Version:	12f
-Release:	0.1
+Release:	1
 License:	GPL
 Group:		Applications/System
 URL:		http://nmon.sourceforge.net/pmwiki.php
