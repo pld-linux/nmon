@@ -1,4 +1,4 @@
-# $Id: nmon.spec,v 1.1 2009-11-26 17:34:53 blekot Exp $
+# $Id: nmon.spec,v 1.2 2009-11-26 17:36:02 blekot Exp $
 # Authority: dag
 # Upstream: Nigel Griffiths <nag$uk,ibm,com>
 
