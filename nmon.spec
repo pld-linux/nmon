@@ -1,4 +1,4 @@
-# $Id: nmon.spec,v 1.2 2009-11-26 17:36:02 blekot Exp $
+# $Id: nmon.spec,v 1.3 2009-11-26 17:39:51 blekot Exp $
 # Authority: dag
 # Upstream: Nigel Griffiths <nag$uk,ibm,com>
 
@@ -9,12 +9,12 @@ Release:	0.1
 License:	GPL
 Group:		Applications/System
 URL:		http://nmon.sourceforge.net/pmwiki.php
-Source0:	http://sourceforge.net/projects/nmon/files/lmon12f.c/download
-# Source0-md5:
-Source1:	http://sourceforge.net/projects/nmon/files/makefile/download
-# Source1-md5:
-Source2:	http://sourceforge.net/projects/nmon/files/Documentation.txt/download
-# Source2-md5:
+Source0:	http://downloads.sourceforge.net/project/nmon/lmon12f.c
+# Source0-md5:	36da7485cc16dccbd6f840359c76ad83
+Source1:	http://downloads.sourceforge.net/project/nmon/makefile
+# Source1-md5:	9db235094ae05e970a02cf1d87090665
+Source2:	http://downloads.sourceforge.net/project/nmon/Documentation.txt
+# Source2-md5:	dbb13658cf55d687c4f2ff771a696d4a
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 ExclusiveArch:	%{ix86} %{x8664} ppc ppc64
