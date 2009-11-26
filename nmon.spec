@@ -1,7 +1,3 @@
-# $Id: nmon.spec,v 1.5 2009-11-26 18:20:54 blekot Exp $
-# Authority: dag
-# Upstream: Nigel Griffiths <nag$uk,ibm,com>
-
 Summary:	Performance analysis tool
 Name:		nmon
 Version:	12f
@@ -10,7 +6,7 @@ License:	GPL
 Group:		Applications/System
 URL:		http://nmon.sourceforge.net/pmwiki.php
 BuildRequires:	ncurses-devel
-Source0:	http://downloads.sourceforge.net/project/nmon/lmon12f.c
+Source0:	http://downloads.sourceforge.net/project/nmon/lmon%{version}.c
 # Source0-md5:	36da7485cc16dccbd6f840359c76ad83
 Source1:	http://downloads.sourceforge.net/project/nmon/Documentation.txt
 # Source1-md5:	dbb13658cf55d687c4f2ff771a696d4a
@@ -24,12 +20,20 @@ analyzing performance data.
 
 %prep
 %setup -q -T -c
-cp -f %{SOURCE0} .
-cp -f %{SOURCE1} .
+install %{SOURCE0} nmon.c
+install %{SOURCE1} .
+
+cat <<'EOF' > Makefile
+nmon: nmon.o
+	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $^ $(LIBS)
+EOF
 
 %build
-#%{__cc} %{rpmcflags} %{rpmldflags} -I/usr/include -I/usr/include/ncurses -o nmon lmon*.c -D JFS -D GETUSER -D LARGEMEM
-%{__cc} -g -O2 -D JFS -D GETUSER -Wall -D LARGEMEM -I/usr/include/ncurses -lncurses -g -o nmon lmon*.c
+%{__make} nmon \
+	CC="%{__cc}" \
+	CFLAGS="%{rpmcflags} -Wall -I/usr/include/ncurses -D JFS -D GETUSER -D LARGEMEM" \
+	LDFLAGS="%{rpmldflags}" \
+	LIBS="-lncurses"
 
 %install
 rm -rf $RPM_BUILD_ROOT
