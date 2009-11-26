@@ -1,4 +1,4 @@
-# $Id: nmon.spec,v 1.3 2009-11-26 17:39:51 blekot Exp $
+# $Id: nmon.spec,v 1.4 2009-11-26 18:12:35 blekot Exp $
 # Authority: dag
 # Upstream: Nigel Griffiths <nag$uk,ibm,com>
 
@@ -24,31 +24,22 @@ nmon is designed for performance specialists to use for monitoring and
 analyzing performance data.
 
 %prep
-%setup -q -c -a1 -a2
+%setup -q -T -c
+cp -f %{SOURCE0} .
+cp -f %{SOURCE2} .
 
 %build
+#%{__cc} %{rpmcflags} %{rpmldflags} -I/usr/include -I/usr/include/ncurses -o nmon lmon*.c -D JFS -D GETUSER -D LARGEMEM
+%{__cc} -g -O2 -D JFS -D GETUSER -Wall -D LARGEMEM -I/usr/include/ncurses -lncurses -g -o nmon lmon*.c
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%ifarch i386
-%{?fc5:%{__install} -Dp -m0755 nmon_x86_fedora5 $RPM_BUILD_ROOT%{_bindir}/nmon}
-%{?el4:%{__install} -Dp -m0755 nmon_x86_rhel4 $RPM_BUILD_ROOT%{_bindir}/nmon}
-%{?el3:%{__install} -Dp -m0755 nmon_x86_rhel3 $RPM_BUILD_ROOT%{_bindir}/nmon}
-%{?el2:%{__install} -Dp -m0755 nmon_x86_rhel2 $RPM_BUILD_ROOT%{_bindir}/nmon}
-%{?rh9:%{__install} -Dp -m0755 nmon_x86_redhat9 $RPM_BUILD_ROOT%{_bindir}/nmon}
-%endif
-%ifarch x86_64
-%{?fc6:%{__install} -Dp -m0755 nmon_x86_64_fedora6 $RPM_BUILD_ROOT%{_bindir}/nmon}
-%{?el4:%{__install} -Dp -m0755 nmon_x86_64_rhel4u4 $RPM_BUILD_ROOT%{_bindir}/nmon}
-%endif
-%ifarch ppc ppc64
-%{?el4:%{__install} -Dp -m0755 nmon_power_rhel4 $RPM_BUILD_ROOT%{_bindir}/nmon}
-%{?el3:%{__install} -Dp -m0755 nmon_power_rhel3 $RPM_BUILD_ROOT%{_bindir}/nmon}
-%endif
+install -D nmon $RPM_BUILD_ROOT%{_bindir}/nmon
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%docdir Documentation.txt
 %attr(755,root,root) %{_bindir}/nmon
