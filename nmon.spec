@@ -2,7 +2,7 @@ Summary:	Performance analysis tool
 Summary(pl.UTF-8):	Narzędzie do analizowania wydajności
 Name:		nmon
 Version:	12f
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/System
 URL:		http://nmon.sourceforge.net/pmwiki.php
@@ -18,7 +18,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 nmon is designed for performance specialists to use for monitoring and
 analyzing performance data.
 
-%description - l pl.UTF-8
+%description -l pl.UTF-8
 nmon to zbudowany dla specjalistów od wydajnosci aby używać go do
 monitorowania i analizoawnia wydajnościowych danych.
 
