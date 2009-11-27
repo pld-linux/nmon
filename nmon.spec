@@ -1,4 +1,5 @@
 Summary:	Performance analysis tool
+Summary(pl.UTF-8):	Narzędzie do analizowania wydajności
 Name:		nmon
 Version:	12f
 Release:	1
@@ -16,6 +17,10 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 nmon is designed for performance specialists to use for monitoring and
 analyzing performance data.
+
+%description - l pl.UTF-8
+nmon to zbudowany dla specjalistów od wydajnosci aby używać go do
+monitorowania i analizoawnia wydajnościowych danych.
 
 %prep
 %setup -qcT
