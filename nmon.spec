@@ -1,14 +1,14 @@
 Summary:	Performance analysis tool
 Summary(pl.UTF-8):	Narzędzie do analizowania wydajności
 Name:		nmon
-Version:	12f
-Release:	2
+Version:	13g
+Release:	1
 License:	GPL
 Group:		Applications/System
 URL:		http://nmon.sourceforge.net/pmwiki.php
 BuildRequires:	ncurses-devel
 Source0:	http://dl.sourceforge.net/project/nmon/lmon%{version}.c
-# Source0-md5:	36da7485cc16dccbd6f840359c76ad83
+# Source0-md5:	b1b8e6c0123ad232394991f2d4f40494
 Source1:	http://dl.sourceforge.net/project/nmon/Documentation.txt
 # Source1-md5:	dbb13658cf55d687c4f2ff771a696d4a
 ExclusiveArch:	%{ix86} %{x8664} ppc ppc64
