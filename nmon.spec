@@ -17,10 +17,14 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 nmon is designed for performance specialists to use for monitoring and
 analyzing performance data.
+Collected data can be analyzed by nmonanalyser tool:
+http://www.ibm.com/developerworks/wikis/display/WikiPtype/nmonanalyser
 
 %description -l pl.UTF-8
 nmon to zbudowany dla specjalistów od wydajnosci aby używać go do
 monitorowania i analizoawnia wydajnościowych danych.
+Zebrane dane można analizować za pomocą narzędzia nmonanalyser:
+http://www.ibm.com/developerworks/wikis/display/WikiPtype/nmonanalyser
 
 %prep
 %setup -qcT
