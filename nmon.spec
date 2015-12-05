@@ -2,7 +2,7 @@ Summary:	Performance analysis tool
 Summary(pl.UTF-8):	Narzędzie do analizowania wydajności
 Name:		nmon
 Version:	14g
-Release:	2
+Release:	3
 License:	GPL
 Group:		Applications/System
 URL:		http://nmon.sourceforge.net/pmwiki.php
